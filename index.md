@@ -5,32 +5,22 @@ tagline: Supporting tagline
 ---
 {% include JB/setup %}
 
-Read [Jekyll Quick Start](http://jekyllbootstrap.com/usage/jekyll-quick-start.html)
+这可能是我的第一个真正意义上的个人BLOG。
 
-Complete usage and documentation available at: [Jekyll Bootstrap](http://jekyllbootstrap.com)
+在这个世界上存在了这么久，总觉得这个世界是牛人的世界。
 
-## Update Author Attributes
+吾辈只需要看看牛人的输出就好了。
 
-In `_config.yml` remember to specify your own data:
+但又如何甘心不留下些痕迹呢？
+ 
+草木有本心，何求美人折？
+
+
+
     
-    title : My Blog =)
     
-    author :
-      name : Name Lastname
-      email : blah@email.test
-      github : username
-      twitter : username
+最近的吐槽：
 
-The theme should reference these variables whenever needed.
-    
-## Sample Posts
-
-This blog contains sample posts which help stage pages and blog data.
-When you don't need the samples anymore just delete the `_posts/core-samples` folder.
-
-    $ rm -rf _posts/core-samples
-
-Here's a sample "posts list".
 
 <ul class="posts">
   {% for post in site.posts %}
@@ -38,9 +28,5 @@ Here's a sample "posts list".
   {% endfor %}
 </ul>
 
-## To-Do
-
-This theme is still unfinished. If you'd like to be added as a contributor, [please fork](http://github.com/plusjade/jekyll-bootstrap)!
-We need to clean up the themes, make theme usage guides with theme-specific markup examples.
 
 
