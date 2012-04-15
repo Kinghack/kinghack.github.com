@@ -61,7 +61,7 @@ html, body {
 }
 .tag_box a span{
 	vertical-align:super;
-	font-size:0.8em;
+	font-size:1.0em;
 }
 .tag_box a.active {
 	background:#57A957;
