@@ -1,24 +1,16 @@
 ---
 layout: page
-title: Welcome
+title: The art has gone.
 tagline: 
 ---
 {% include JB/setup %}
 
-###在测试
  
 ###草木有本心，何求美人折？
-
-###
-
-###
+ 	
 
  
 
-
-
-    
-    
 ##最近的声音：
 
 
