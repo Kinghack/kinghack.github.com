@@ -10,7 +10,7 @@ pygments: true
 # so be sure to set them if your theme uses them.
 #
 title : 子柴笔记
-tagline: Site Tagline
+tagline: 
 author :
   name : happyface
   email : ilsh1022@gmail.com
