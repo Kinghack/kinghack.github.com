@@ -14,7 +14,7 @@ The void is *not* nothing.
 <br/>
 <br/>
 		  
-##最近的声音：
+##Recently post：
 
 
 <ul class="posts">
