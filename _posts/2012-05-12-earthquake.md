@@ -9,7 +9,7 @@ tags: []
 
 时间过得这样快，汶川地震已经四年过去了。今天贴出一篇写于地震一周年之际的文章。有些东西，我们永远需要永远铭记。
 
-北川老县城的相册可以见[这里](http://photo.renren.com/photo/225439137/album-302653598)，当时记录的日记[1](http://blog.renren.com/blog/225439137/294504817?frommyblog),[2](http://blog.renren.com/blog/225439137/294504986?frommyblog),[3](http://blog.renren.com/blog/225439137/294505197?frommyblog),[4](http://blog.renren.com/blog/225439137/294505463?frommyblog),[5](http://blog.renren.com/blog/225439137/294505844?frommyblog)。
+北川老县城的相册可以见[这里]( http://photo.renren.com/photo/ap/LxXbxEB7ew)，当时记录的日记[1]( http://blog.renren.com/blog/bp/QgGkzT0iqw),[2]( http://blog.renren.com/blog/bp/QgGkz6e6Kw),[3]( http://blog.renren.com/blog/bp/QgGkz-TXjw),[4]( http://blog.renren.com/blog/bp/QgGk8rKAPw),[5]( http://blog.renren.com/blog/bp/QgGk8Qogkw)。
 
 以下为正文：
 
