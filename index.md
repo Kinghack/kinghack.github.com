@@ -13,7 +13,6 @@ The void is *not* nothing.
 <br/>
 <br/>
 <br/>
-<meta property="wb:webmaster" content="d77dbd93aa59a3b4" />
 
 		  
 ##Recently post：
