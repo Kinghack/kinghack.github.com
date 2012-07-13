@@ -13,7 +13,6 @@ The void is *not* nothing.
 <br/>
 <br/>
 <br/>
-<meta property="qc:admins" content="145666573511561667" />
 <meta property="wb:webmaster" content="d77dbd93aa59a3b4" />
 
 		  
