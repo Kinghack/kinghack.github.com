@@ -3,7 +3,7 @@ layout: post
 title: "beijing one month"
 description: ""
 category: 
-tags: [日记]［随笔］［北京］
+tags: [日记,随笔]
 ---
 {% include JB/setup %}
 
