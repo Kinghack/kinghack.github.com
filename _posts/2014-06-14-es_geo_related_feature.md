@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Elasticsearc geo related feature折腾"
+title: "Elasticsearch geo related feature折腾"
 description: ""
 category: 
 tags: []
@@ -29,7 +29,7 @@ tags: []
   2. 查询距离范围内（geo_point, distance range filter）
   3. 按距离排序（geo_point, sort）
   4. 指定形状内（geo_shape, geo shape query/geo shape filter）
-  
+ 
 ###性能比较
 
 两者的性能也做了粗略的比较。
@@ -64,9 +64,13 @@ tags: []
 
 ###结论
 
-但就目前的测试结果来看，无论从性能上，还是从未来的需求上来看，我们都应该将现在的type由geo_shape换成geo_point。
+就目前的测试结果来看，无论从性能上，还是从未来的需求上来看，我们都应该将现在的type由geo_shape换成geo_point。
+
+不过网上找到过[一篇文章](http://grokbase.com/t/gg/elasticsearch/143kvq10sn/difference-between-geo-point-and-geo-shape-point)，测试的性能是另一种[filter](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-geo-bounding-box-filter.html),性能上似乎就是geo_shape占优了，不过这篇文章的测试从业务需求上来说跟我不太一样。
+
 
 ###TODO
   1. 更严格的性能测试；
   2. 加入geo related filter后的性能调优；
+  3. 把[这篇文章](http://euphonious-intuition.com/2013/05/all-about-elasticsearch-filter-bitsets/)吃透下；
 
