@@ -1,11 +1,13 @@
 ---
 layout: post
 title: "为什么Have选择用golang作为后端服务开发语言"
-description: "写于[php7](http://php.net/get/php-7.0.0.tar.gz/from/a/mirror)发布之际"
+description: ""
 category: 
 tags: []
 ---
 {% include JB/setup %}
+写于[php7](http://php.net/get/php-7.0.0.tar.gz/from/a/mirror)发布之际
+
 无意挑起语言之争，只是谈谈我的看法和选择过程，每个team和项目都应该针对自己的情况分析做出选择。
 
 昨天php7开始预热，由于大幅度的性能提升，以及亚一程[鸟哥](http://weibo.com/laruence)作为核心开发者，这个版本的php备受关注，我也第一时间下载下来编译安装，没跑web方面的例子，而只是跑了段测试程序，性能的确提高了1倍。这个提升是非常大的，感觉所有用php的小伙伴们都应该尽快升级。鸟哥的工作也值得尊敬。
