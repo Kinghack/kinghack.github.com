@@ -54,9 +54,9 @@ mini也杳无音信，让我现在买新的我也心有不甘，所以这事儿�
         add_git_tag(
             tag: Time.new.strftime("%Y%jT%H%MZ"),
         )
-        sh “your upload script"
+        sh "your upload script"
         slack(
-          message: “down load from here http://xxxxx",
+          message: "down load from here http://xxxxx",
           channel: "#newversion",  # Optional, by default will post to the default
     channel configured for the POST URL.
         )
