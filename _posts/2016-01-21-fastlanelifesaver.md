@@ -30,39 +30,37 @@ mini也杳无音信，让我现在买新的我也心有不甘，所以这事儿�
 
 之前是根据这篇[文章](https://engineering.circle.com/different-app-icons-for-beta-dev-and-release-builds/)配置了不同的compile策略使得测试版，开发版，正式版能共存与手机上。这个为背景。下面是主要的FastLane的配置：
 
-```
-lane :beta do
-    gym(scheme: "HaveAdHoc", clean: true, use_legacy_build_api: true,
-export_method: "ad-hoc", output_directory: "~/Desktop/", output_name:
-"HaveAdHoc", silent: true)
-        # Build your app - more options available
-    commitmsg = changelog_from_git_commits(
-        pretty: '- (%ae) %s', # Optional, lets you provide a custom format to
-apply to each commit when generating the changelog text
-        include_merges: false # Optional, lets you filter out merge commits
-    )
-    slack(
-      message: commitmsg,
-      channel: "#newversion",  # Optional, by default will post to the default
-channel configured for the POST URL.
-      success: true,        # Optional, defaults to true.
-      payload: {            # Optional, lets you specify any number of your own
-Slack attachments.
-        'Build Date' => Time.new.to_s,
-        'Built by' => 'qiuqiu',
-      },
-    )
-    add_git_tag(
-        tag: Time.new.strftime("%Y%jT%H%MZ"),
-    )
-    sh “your upload script"
-    slack(
-      message: “down load from here http://xxxxx",
-      channel: "#newversion",  # Optional, by default will post to the default
-channel configured for the POST URL.
-    )
-end
-```
+    lane :beta do
+        gym(scheme: "HaveAdHoc", clean: true, use_legacy_build_api: true,
+    export_method: "ad-hoc", output_directory: "~/Desktop/", output_name:
+    "HaveAdHoc", silent: true)
+            # Build your app - more options available
+        commitmsg = changelog_from_git_commits(
+            pretty: '- (%ae) %s', # Optional, lets you provide a custom format to
+    apply to each commit when generating the changelog text
+            include_merges: false # Optional, lets you filter out merge commits
+        )
+        slack(
+          message: commitmsg,
+          channel: "#newversion",  # Optional, by default will post to the default
+    channel configured for the POST URL.
+          success: true,        # Optional, defaults to true.
+          payload: {            # Optional, lets you specify any number of your own
+    Slack attachments.
+            'Build Date' => Time.new.to_s,
+            'Built by' => 'qiuqiu',
+          },
+        )
+        add_git_tag(
+            tag: Time.new.strftime("%Y%jT%H%MZ"),
+        )
+        sh “your upload script"
+        slack(
+          message: “down load from here http://xxxxx",
+          channel: "#newversion",  # Optional, by default will post to the default
+    channel configured for the POST URL.
+        )
+    end
 
 经过以上配置，现在要发achoc版本的时候，只需要：
 
