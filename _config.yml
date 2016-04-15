@@ -2,7 +2,7 @@
 # For more see: https://github.com/mojombo/jekyll/wiki/Permalinks
 permalink: :day/:month/:year/:title 
 
-exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
+exclude: ["vendor", ".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 auto: true
 highlighter: "rouge"
 
