@@ -6,7 +6,7 @@ category:
 tags: []
 ---
 {% include JB/setup %}
-这个开发迭代周期，主要是会将交易闭环做掉，即为Have完成线上交易的功能。正如我的前一篇[Blog](http://blog.qiuqiu.info/22/11/2015/have-server-step-by-step)为未来准备所说的，未来一定上交易，肯定还是会上关系型数据库，当初的数据库选择MongoDB主要是为对他的熟悉程度超过MySQL和PostgreSQL。但一旦涉及到交易相关的，必然还是需要上更稳妥的数据库选择。对于MySQL和PostgreSQL的选择就不说了，但后者对GIS和json的支持让我现在一点也不犹豫。因为如果这块摸熟了，会趁着现在规模少，把MongoDB里的数据迁移进来的。至于部署PostgreSQL，时间效率要求，不折腾配置了，直接使用AWS的RDS服务，目前测试阶段感觉不错，但真正线上稳定与否，需要上线后再评估。
+这个开发迭代周期，主要是会将交易闭环做掉，即为Have完成线上交易的功能。正如我的前一篇[Blog](http://blog.qiuqiu.info/22/11/2015/have-server-step-by-step)为未来准备所说的，未来一定上交易，肯定还是会上关系型数据库，当初的数据库选择MongoDB主要是为对他的熟悉程度超过MySQL和PostgreSQL。但一旦涉及到交易相关的，必然还是需要上更稳妥的数据库选择。对于MySQL和PostgreSQL的选择就不说了，但后者对GIS和json的支持让我现在一点也不犹豫。并且现在的设想是，如果这块摸熟了，会趁着现在规模少，把MongoDB里的数据迁移进来的。至于部署PostgreSQL，时间效率要求，不折腾配置了，直接使用AWS的RDS服务，目前测试阶段感觉不错，但真正线上稳定与否，需要上线后再评估。
 
 这两天主要是确认了下PostgreSQL的事务设计。详细的可以看[这里](http://www.postgresql.org/docs/current/static/transaction-iso.html
 )。
@@ -75,7 +75,7 @@ second transciton <nil>
 
 > The Repeatable Read isolation level only sees data committed before the transaction began; it never sees either uncommitted data or changes committed during transaction execution by concurrent transactions. (However, the query does see the effects of previous updates executed within its own transaction, even though they are not yet committed.) 
 
-换句话说，这个事务里应该只读得到事务开始前其他事务commit的更新；与我的理解还蛮符合的，这个时候，我在想，会不会是服务器虽然配置了事务隔离级别，但这个对话的session还是read commited这个级别，因为，事务级别是根据各家的驱动自己实现的，https://golang.org/pkg/database/sql/#DB.Begin
+换句话说，这个事务里应该只读得到事务开始前其他事务commit的更新；与我的理解还蛮符合的，这个时候，我在想，会不会是服务器虽然配置了事务隔离级别，但这个对话的session还是read commited这个级别，因为，事务级别是根据各家的驱动[自己实现](https://golang.org/pkg/database/sql/#DB.Begin)的，
 而pg默认就是read committed.
 
 于是我更改了code，如下：
