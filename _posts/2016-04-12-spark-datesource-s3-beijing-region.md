@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "aws中国区猜坑：spark从s3中读文件"
+title: "aws中国区踩坑：spark从s3中读文件"
 description: ""
 category: 
 tags: []
@@ -20,7 +20,7 @@ Have的现在数据主要是两类，第一种是数据库中的数据，ad,user
 
 首先，对于我们这种没有历史负担的产品来说，当然下载一个最新的spark prebuild with
 hadoop
-latest啦。下载下来，简单的把文件从本地路径换成s3协议，发现报错，提示的意思就是s3协议不认识。明明官方文档说可以读的，于是就搜啊搜，看到了[这个](http://stackoverflow.com/a/28033408/1072544)。大概意思就是出于某种原因，实现n3协议的jar包没被包在hadoop2.6中，下载2.6就解决啦。但一个prebuild有300MB，我用中国区的s3其实下载得很辛苦，不是很高兴再下载一遍，于是就继续找解决方案，发现可以通过指定一个package来强制使用一份实现，像这样：
+latest啦。下载下来，简单的把文件从本地路径换成s3协议，发现报错，提示的意思就是s3协议不认识。明明官方文档说可以读的，于是就搜啊搜，看到了[这个](http://stackoverflow.com/a/28033408/1072544)。大概意思就是出于某种原因，实现n3协议的jar包没被包在hadoop2.6中，下载2.4就解决啦。但一个prebuild有300MB，我用中国区的s3其实下载得很辛苦，不是很高兴再下载一遍，于是就继续找解决方案，发现可以通过指定一个package来强制使用一份实现，像这样：
 `
 /bin/spark-submit --packages org.apache.hadoop:hadoop-aws:2.6.0 log.py
 `
@@ -65,6 +65,7 @@ region是新的区，不需要做兼容，因此只实现了v4的signature算法
 request。
 
 踩坑至此，坑爹的一天总算结束了，没错，中国区aws中spark读s3的问题依然没有解决，不过放在眼前的路已经蛮清晰了：
+
 * 攻克那个v4签名的问题
 * 找aws的技术看s3a bad request的问题
 * 实现功能优先，老子现在又不是本地存不下

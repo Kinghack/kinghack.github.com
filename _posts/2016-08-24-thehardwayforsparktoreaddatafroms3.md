@@ -18,7 +18,7 @@ I almost give up.
 
 After *cleaning my mind*, I try to fix out which situation I am in. In short, if I want to use prebuild2.4, I have to config jet3t library. If I want to use prebuild2.6, I have to config aws-java-sdk. Both are java project while I have almost zero background in java knowledge. **Time is limited**, I have to decide which way to continue trying… After a thought, I choose to config aws-java-sdk since It is *supported by AWS* itself.
 
-After searching code, I found there is no way I could config endpoint by *env variable* since code is like this
+After searching Spark source code, I found there is no way I could config endpoint by *env variable* since code is like [this](https://github.com/apache/spark/blob/ab648c0004cfb20d53554ab333dd2d198cb94ffa/core/src/main/scala/org/apache/spark/deploy/SparkHadoopUtil.scala#L87)
 
 ![](https://ooo.0o0.ooo/2016/08/23/57bcf8c6d547f.jpeg)
 
