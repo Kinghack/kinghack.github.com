@@ -6,6 +6,8 @@ category:
 tags: []
 ---
 {% include JB/setup %}
+Update in 2016.08.24. Succeed finlly. Please read this [blog](http://blog.qiuqiu.info/24/08/2016/thehardwayforsparktoreaddatafroms3).
+
 今天一天掉在坑里起不来，所以用一篇blog记录下来折腾。
 
 Have马上就会开始扩类目，而不是之前单纯的自行车。既然扩类目了，那我们的产品又没有设计一个实际的类目层，所以为了避免其他方面的用户进来后冲刷现在的体验，产品上要做的准备其实一个是加强对tag的使用，另一个就是走推荐的路子。那很明显，以我们现在的体量，说推荐都是有点虚的，可以做的就是基于用户的行为按照规则进行推荐。那技术上的储备就是将所有的数据存下并且可以分析。
