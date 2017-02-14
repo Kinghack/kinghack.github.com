@@ -1,54 +1,88 @@
---- 
-JB: 
-  ASSET_PATH: false
-  BASE_PATH: false
-  analytics: 
-    getclicky: 
-      site_id: ~
-    google: 
-      tracking_id: UA-30908734-1
-    mixpanel: 
-      token: _MIXPANEL_TOKEN_
-    provider: google
-  archive_path: /archive.html
-  atom_path: /atom.xml
-  categories_path: /categories.html
-  comments: 
-    disqus: 
-      short_name: kinghack
-    facebook: 
-      appid: 123
-      colorscheme: light
-      num_posts: 5
-      width: 580
-    intensedebate: 
-      account: 123abc
-    livefyre: 
-      site_id: 123
-    provider: disqus
-  rss_path: /rss.xml
-  sharing: 
-    provider: false
-  tags_path: /tags.html
-  version: "0.3.0"
-encoding: "utf-8"
-markdown: kramdown
-author: 
-  email: ilsh1022@gmail.com
-  feedburner: "http://feed.feedburner.com/github/VbZg"
-  github: Kinghack
-  name: happyface
-  twitter: happyface1022
-exclude: 
-  - vendor
-  - .rvmrc
-  - .rbenv-version
-  - README.md
-  - Rakefile
-  - changelog.md
-highlighter: rouge
-permalink: !ruby/symbol "day/:month/:year/:title"
-production_url: "http://Kinghack.github.com"
-tagline: ~
-title: zichai
+#--- 
+#JB: 
+#  ASSET_PATH: false
+#  BASE_PATH: false
+#  analytics: 
+#    getclicky: 
+#      site_id: ~
+#    google: 
+#      tracking_id: UA-30908734-1
+#    mixpanel: 
+#      token: _MIXPANEL_TOKEN_
+#    provider: google
+#  archive_path: /archive.html
+#  atom_path: /atom.xml
+#  categories_path: /categories.html
+#  comments: 
+#    disqus: 
+#      short_name: kinghack
+#    facebook: 
+#      appid: 123
+#      colorscheme: light
+#      num_posts: 5
+#      width: 580
+#    intensedebate: 
+#      account: 123abc
+#    livefyre: 
+#      site_id: 123
+#    provider: disqus
+#  rss_path: /rss.xml
+#  sharing: 
+#    provider: false
+#  tags_path: /tags.html
+#  version: "0.3.0"
+#encoding: "utf-8"
+#markdown: kramdown
+#author: 
+#  email: ilsh1022@gmail.com
+#  feedburner: "http://feed.feedburner.com/github/VbZg"
+#  github: Kinghack
+#  name: happyface
+#  twitter: happyface1022
+#exclude: 
+#  - vendor
+#  - .rvmrc
+#  - .rbenv-version
+#  - README.md
+#  - Rakefile
+#  - changelog.md
+#highlighter: rouge
+#permalink: !ruby/symbol "day/:month/:year/:title"
+#production_url: "http://Kinghack.github.com"
+#tagline: ~
+#title: zichai
+#
+## Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+title: zichai
+email: ilsh1022@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: happyface1022
+github_username: Kinghack
+
+# Build settings
+markdown: kramdown
+theme: minima
+gems:
+  - jekyll-feed
+exclude:
+  - Gemfile
+  - Gemfile.lock
