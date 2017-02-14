@@ -7,7 +7,7 @@ permalink: :day/:month/:year/:title
 #  - :title
 
 exclude: ["vendor", ".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
-#auto: true
+auto: true
 highlighter: "rouge"
 
 # Themes are encouraged to use these universal variables 
