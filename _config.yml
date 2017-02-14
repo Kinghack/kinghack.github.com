@@ -1,13 +1,13 @@
 # This is the default format. 
 # For more see: https://github.com/mojombo/jekyll/wiki/Permalinks
-permalink: :day/:month/:year/:title 
+permalink::day/:month/:year/:title 
 #  - :day
 #  - :month
 #  - :year
 #  - :title
 
 exclude: ["vendor", ".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
-auto: true
+#auto: true
 highlighter: "rouge"
 
 # Themes are encouraged to use these universal variables 
