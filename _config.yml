@@ -180,5 +180,5 @@ highlighter: rouge
 permalink: !ruby/symbol "day/:month/:year/:title"
 production_url: "http://Kinghack.github.com"
 tagline: ~
-title: 子柴
+title: zichai
 
