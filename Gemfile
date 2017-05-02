@@ -1,9 +1,6 @@
 source "https://rubygems.org"
 gemspec :name => "jekyll"
 
-source 'https://rubygems.org'
-gem 'github-pages', group: :jekyll_plugins
-
 gem "rake", "~> 11.0"
 group :development do
   gem "launchy", "~> 2.3"
@@ -60,20 +57,20 @@ group :jekyll_optional_dependencies do
   gem "coderay", "~> 1.1.0"
   gem "jekyll-docs", :path => '../docs' if Dir.exist?('../docs') && ENV['JEKYLL_VERSION']
   gem "jekyll-gist", "~> 1.0"
-  gem "jekyll-feed", "~> 0.3.1"
+  gem "jekyll-feed", "~> 0.1.3"
   gem "jekyll-coffeescript", "~> 1.0"
   gem "jekyll-redirect-from", "~> 0.9.1"
   gem "jekyll-paginate", "~> 1.0"
   gem "mime-types", "~> 3.0"
-  gem "kramdown", "~> 1.5.0"
+  gem "kramdown", "~> 1.9"
   gem "rdoc", "~> 4.2"
 
   platform :ruby, :mswin, :mingw do
     gem "rdiscount", "~> 2.0"
     gem "pygments.rb", "~> 0.6.0"
-    gem "redcarpet", "~> 2.2.2"
+    gem "redcarpet", "~> 3.2", ">= 3.2.3"
     gem "classifier-reborn", "~> 2.0"
-    gem "liquid-c", "~> 2.6.2"
+    gem "liquid-c", "~> 3.0"
   end
 end
 
@@ -84,7 +81,7 @@ group :site do
     gem "html-proofer", "~> 2.0"
   end
 
-  gem "jemoji", "0.6.1"
+  gem "jemoji", "0.5.1"
   gem "jekyll-sitemap"
   gem "jekyll-seo-tag", "~> 1.1"
   gem "jekyll-avatar"
