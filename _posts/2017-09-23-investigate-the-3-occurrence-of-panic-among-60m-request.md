@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Investigate the 3 occurrence of panic among 60m request"
+title: "Investigate the 3 occurrence of panic among 30m request"
 description: ""
 category: 
 tags: []
