@@ -35,7 +35,8 @@ With the help of DevOps team, it is clear that one of the nodes in elasticsearch
 
 After searching the log, we could see that only 3 panics happened. All the others log *successfully*. And with the help of stack, we could know that some concurrent read and map write happened. Because we are trying to log the context so I am thinking maybe I could reproduce it. So I have a try.
 
-```package main
+```
+package main
 // go run -race main.go
 import (
     "context"
@@ -102,13 +103,15 @@ activeConn:map[*http.conn]struct {}{(*http.conn)(0xc4207080a0):struct {}{}}
 Before diving into detail, I would like to know how this structure is inserted in context?  It is clear after checking with the golang [source code](https://github.com/golang/go/blob/master/src/net/http/server.go#L2721).
  
 
-``` baseCtx := context.Background() // base is always background, per Issue 16220
+``` 
+baseCtx := context.Background() // base is always background, per Issue 16220
  ctx := context.WithValue(baseCtx, ServerContextKey, srv)
 ```
 
 So let me back to the context detail. My doubt is that it is due to **activeConn**. It will change while connection status change of a service. The remaining thing is to prove it. So I write the code. 
 
-```package main
+```
+package main
 
 import (
  "fmt"
