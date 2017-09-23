@@ -74,6 +74,7 @@ func main() {
     return
 }
 ```
+
 Unfortunately, I could reproduce with the map but not context. Context example would panic but not because of concurrent read but **over stack limit**. At this point, I am thinking maybe some of the middleware in our service do some magic of context. So I add the middleware of test code, still could not reproduce the panic. 
 
 After a second thought, I am thinking since it is so clear that it is due to map structure. I could also set a map in context as value. The test result proves my guess. 
@@ -84,6 +85,7 @@ After a second thought, I am thinking since it is so clear that it is due to map
     }
  ctx := context.WithValue(context.Background(), "map", m)
 ```
+
 
 After reproducing the possibility of panic, the question remaining is which part of data in context is written while logging? 
 
@@ -96,6 +98,7 @@ TLSNextProto:map[string]func(*http.Server, *tls.Conn, http.Handler){“h2”:(fu
 “http.url.parameters”:map[string]string{}
 activeConn:map[*http.conn]struct {}{(*http.conn)(0xc4207080a0):struct {}{}}
 ```
+
 Before diving into detail, I would like to know how this structure is inserted in context?  It is clear after checking with the golang [source code](https://github.com/golang/go/blob/master/src/net/http/server.go#L2721).
  
 
